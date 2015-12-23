@@ -6,3 +6,5 @@ To be used in conjunction with the [Open Frameworks client](http://github.com/dg
 npm install
 npm start
 ```
+
+hosted at http://peepshow.herokuapp.com
