@@ -6,18 +6,11 @@ var app = require('express')(),
     express = require('express'),
     server = require('http').createServer(app),
     io = require('socket.io').listen(server),
-    fs = require('fs'),
-    port = 8080,
-    url  = 'http://localhost:' + port + '/';
-/* We can access nodejitsu enviroment variables from process.env */
-/* Note: the SUBDOMAIN variable will always be defined for a nodejitsu app */
-if(process.env.SUBDOMAIN){
-  url = 'http://' + process.env.SUBDOMAIN + '.jit.su/';
-}
+    fs = require('fs');
 
-server.listen(port);
-console.log("Express server listening on port " + port);
-console.log(url);
+app.set('port', (process.env.PORT || 5000));
+server.listen(app.get('port'));
+console.log("Express server listening on port " + app.get('port'));
 
 app.use(express.bodyParser());
 
