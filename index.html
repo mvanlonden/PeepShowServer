@@ -28,6 +28,8 @@
               });
             });
             var ctx = document.getElementById('canvas').getContext('2d');
+            ctx.canvas.width = 200;
+            ctx.canvas.height = 200;
 
 
             socket.on('image', function(info) {
